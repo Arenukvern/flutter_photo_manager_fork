@@ -106,14 +106,15 @@ android {
         namespace 'com.flutterandies.photo_manager'
     }
 
-    compileSdkVersion 34
-
-    def javaVersion = getJavaVersion()
-    logger.info("Using java ${javaVersion} at android.compileOptions.sourceCompatibility and android.compileOptions.targetCompatibility in photo_manager.")
+    compileSdk 34
 
     compileOptions {
-        sourceCompatibility javaVersion
-        targetCompatibility javaVersion
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 
     sourceSets {
